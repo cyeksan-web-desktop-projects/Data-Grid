@@ -13,16 +13,8 @@ namespace Data_Grid.Controllers
 
         SqlCommand command = new SqlCommand();
         SqlDataReader dataReader;
-        SqlConnection connection = new SqlConnection();
+        SqlConnection connection = new SqlConnection(Properties.Resources.ConnectionString);
         List<Address> addresses = new List<Address>();
-
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-            connection.ConnectionString = Data_Grid.Properties.Resources.ConnectionString;
-        }
 
         public IActionResult Index()
         {
